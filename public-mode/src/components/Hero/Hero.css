@@ -1,0 +1,33 @@
+.hero {
+  padding: 64px 0 40px;
+  background: linear-gradient(180deg, #f7faff 0%, #ffffff 100%);
+}
+
+.hero__content {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  width: fit-content;
+  background: #e8f1ff;
+  color: var(--color-primary);
+  border: 1px solid #cfe1ff;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}

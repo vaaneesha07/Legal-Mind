@@ -1,0 +1,27 @@
+.chat-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.chat-box__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-box__header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.chat-box__body {
+  min-height: 180px;
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  padding: 16px;
+  color: var(--color-text-secondary);
+}
