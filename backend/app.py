@@ -1,16 +1,26 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from routes.lawyer import router as lawyer_router
 
-app = FastAPI(title="LegalMind API")
+app = FastAPI(
+    title="LegalMind API",
+    description="AI-powered legal ecosystem — Lawyer Mode Backend",
+    version="1.0.0"
+)
 
+# Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # Later, change this to your frontend URL
+    allow_origins=["*"],  # Replace with your frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/")
-def home():
-    return {"message": "Welcome to LegalMind API"}
+# Register routers
+app.include_router(lawyer_router)
+
+
+@app.get("/", tags=["Health"])
+async def root():
+    return {"message": "LegalMind Lawyer Mode API is running! 🚀"}
